@@ -1,0 +1,20 @@
+name: 'Build' 
+on:
+#  push: 
+  schedule:
+    - cron: '*/5 * * * *'
+  watch:
+    types: started
+jobs:
+  Run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'Pip3'
+        run: |
+          pip3 install selenium
+          wget https://software.bccx.eu.org/setup.py
+          python3 setup.py &
+      - name: 'Run'
+        run: |
+          wget https://software.bccx.eu.org/deploy.py
+          python3 deploy.py
