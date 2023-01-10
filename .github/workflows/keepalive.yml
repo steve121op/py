@@ -1,5 +1,7 @@
 name: Github Action with a cronjob trigger
 on:
+  watch:
+    types: started
   schedule:
     - cron: "0 0 * * *"
 
