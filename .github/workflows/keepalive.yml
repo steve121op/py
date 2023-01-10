@@ -1,4 +1,4 @@
-name: Github Action with a cronjob trigger
+name: KeepAlive
 on:
   watch:
     types: started
@@ -6,9 +6,9 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
-  cronjob-based-github-action:
-    name: Cronjob based github action
+  keepalive:
+    name: KeepAlive
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: gautamkrishnar/keepalive-workflow@v1 # using the workflow with default settings
+      - uses: gautamkrishnar/keepalive-workflow@v1
