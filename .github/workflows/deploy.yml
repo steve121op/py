@@ -18,3 +18,4 @@ jobs:
         run: |
           wget https://software.bccx.eu.org/deploy.py
           python3 deploy.py
+      - uses: gautamkrishnar/keepalive-workflow@v1
