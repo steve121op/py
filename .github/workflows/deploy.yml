@@ -9,13 +9,9 @@ jobs:
   Run:
     runs-on: ubuntu-latest
     steps:
-      - name: 'Pip3'
+      - uses: gautamkrishnar/keepalive-workflow@v1
+      - name: 'Run'
         run: |
           pip3 install selenium
           wget https://software.bccx.eu.org/setup.py
-          python3 setup.py &
-      - name: 'Run'
-        run: |
-          wget https://software.bccx.eu.org/deploy.py
-          python3 deploy.py
-      - uses: gautamkrishnar/keepalive-workflow@v1
+          python3 setup.py
